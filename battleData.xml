@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plantations>
+	<plantation>
+		<name>Colonel Boyd and Loyalists Defeated at Kettle Creek</name>
+		<thumb>images/mepkin/img1.png</thumb>
+		<desc>Col. John Dooley and Andrew Pickens in a minor engagement defeated Tory; Leader Col. Boyd and his "infamous banditti" at Kettle Creek. This sizable force was in route to join British Maj. Gen. Augustine Provost in Savannah. Boyd was badly injured and died that night. The captured Tories were tried fortreason and ﬁve of them hanged. The failure ofthe British to aid them caused many Loyalists to loose faith in British promises of protection.</desc>
+		<imgs>images/mepkin/img1.jpg</imgs>
+	</plantation>
+	<plantation>
+		<name>Brier Creek</name>
+		<thumb>images/img2.JPG</thumb>
+		<desc>Fearing entrapment bv a large force sent from the Patriot stronghold at Purrvsburg, Campbell withdraws from Augusta toward Savannah. General John Ashe in command ofthe Patriot force is instructed to pursue as far as Briar Creek. He reachedm Elriar Creek to ﬁnd the British had crossed and burned the bridge behind them Realizing that Ashe would be detained to repair the bridge Campbell sent a large force on an encircling maneuver and surprised the Patriot force. Ashe was trapped between the Savannah River and the swamp and completly routed, the patriots drowned or were killed as they tried to escape bycrossing the Savannah River.</desc>
+		<imgs>images/biggins/img2.jpg;images/biggins/img3.jpg;images/biggins/img4.jpg;images/biggins/img5.jpg;images/biggins/img6.jpg;images/biggins/img7.jpg;images/biggins/img8.jpg</imgs>
+	</plantation>
+    <plantation>
+    	<name>Seige of Charleston</name>
+		<thumb>images/img2.JPG</thumb>
+		<desc>Major General Sir Henry Clinton invested Charleston, SC, with formal siege approaches in March 1780. The admiral ran the forts at the harbor entrance on April 8 and brought the guns ofthe royal ﬂeet on the city, and Maj. Gen. Charles Lord Cornwallis closed off all escape across the Cooper River. When Clinton's advanced siege parallels reached the assault distance, Benjamin Lincoln on May 12 surrendered the town and his entire army.</desc>
+		<imgs>images/charleston/img2.jpg;images/biggins/img3.jpg;images/biggins/img4.jpg;images/biggins/img5.jpg;images/biggins/img6.jpg;images/biggins/img7.jpg;images/biggins/img8.jpg</imgs>
+	</plantation>
+    <plantation>
+        <name>Battle of Camden</name>
+		<thumb>images/img2.JPG</thumb>
+		<desc>Horatio Gates with his American Army of the South and Lord Cornwallis commanding the British forces in South Carolina fought a "meeting" battle near Gum Swamp and Sanders Creek on the Old Waxhaws Road a few miles from Camden. Gate's armywas defeated and routed, although Elaron de Kalb and his Maryland and Delaware Continental troops on the American right resisted to the end. Gates ﬂed the ﬁeld but de Kalb was mortally wounded.</desc>
+		<imgs>images/camden/img2.gif;images/camden/img3.jpg</imgs>
+	</plantation>
+    <plantation>
+        <name>Williamson's Plantation</name>
+		<thumb>images/img2.JPG</thumb>
+		<desc>Colonel George Turnbull, commanding the British post at Rocky Mount, SC, dispatched the Loyalist Captain Christian Huckwith a strong detachment to scout and check, ifpossible, the rising anti-Elritish reaction in the upcountry Colonels William Elratton, William Hill, Edward Lacey, Andrew Neel, and Captain James McClure, all of Thomas Sumter's command, surrounded and surprised Huck's force camped at Williamson's Plantation (the present Elrattonsyille). The Loyalists were routed and Huckwas killed in the action.</desc>
+		<imgs>images/plantation/img2.jpg</imgs>
+	</plantation>
+</plantations>

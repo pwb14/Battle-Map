@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="js/lightbox.min.js"></script>
+    <link href="css/lightbox.css" rel="stylesheet" />
+
+<style type="text/css">
+    #img-container{
+        width: 75%;
+        margin:0 auto;
+        display: table;
+    }
+    h1{
+        text-align: center;
+    }
+    .img-zoom{
+        float: left;
+        width: 20%;
+        height: 20%;
+    }
+</style>
+
+<script>
+function loadXMLDoc()
+{
+var xmlhttp;
+var txt,x,i;
+var query;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    query = parseInt(window.location.search.substring(10,11));
+    alert(query);
+    xmlDoc=xmlhttp.responseXML;
+    txt="";
+    x=xmlDoc.getElementsByTagName("name");    
+      txt= x[query].firstChild.nodeValue;
+    document.getElementById("test").innerHTML=txt;
+    }
+  }
+xmlhttp.open("GET","plantationData.xml",true);
+xmlhttp.send();
+
+}
+
+
+</script>
+
+</head>
+<body>
+    <h1>Mepkin Plantation</h1>
+    <div id="img-container">
+        <a href="images/mepkin/img1.png" data-lightbox="image-1" data-title="My caption"><img class="img-zoom" data-lightbox="mepkin" src="images/mepkin/img1.png" alt="Mepkin Plantation House"/></a>
+        <a href="images/mepkin/img2.png" data-lightbox="image-1" data-title="My caption"><img class="img-zoom" data-lightbox="mepkin" src="images/mepkin/img2.png" alt="Mepkin Plantation House"/></a>
+        <a href="images/mepkin/img3.png" data-lightbox="image-1" data-title="My caption"><img class="img-zoom" data-lightbox="mepkin" src="images/mepkin/img3.png" alt="Mepkin Plantation House"/></a>
+        <a href="images/mepkin/img4.png" data-lightbox="image-1" data-title="My caption"><img class="img-zoom" data-lightbox="mepkin" src="images/mepkin/img4.png" alt="Mepkin Plantation House"/></a>
+        <a href="images/mepkin/img5.png" data-lightbox="image-1" data-title="My caption"><img class="img-zoom" data-lightbox="mepkin" src="images/mepkin/img5.png" alt="Mepkin Plantation House"/></a>        
+    </div>
+    <div>
+    <p>Site of Mepkin Plantation, home of Henry Laurens, President of the Continental Congress, planter, merchant and slave trader.  Born in Charleston in 1724, Laurens married Eleanor Ball, daughter of Elias Ball.  Laurens purchased Mepkin (thought to be Indian for 'serene and lovely') in 1762.  Captured at sea by the British during the Revolution, Laurens spent two years in the Tower of London and was one of the United States' peace commissioners at Paris.  During the war, his home was burned by British soldiers and his gardens destroyed.</p>
+    <p id="test">hello</p>
+    <button type="button" onclick="loadXMLDoc()">Get my CD collection</button>
+    </div>
+
+</body>
+</html>

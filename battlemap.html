@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Battle Map</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="selector_styles.css"> -->
+    
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src="jquery.nicescroll.js"></script>
+
+    
+	<script src="selector_script2.js"></script>
+   <script src="bootstrap-slider.js"></script>
+<link rel="stylesheet" src="slider.css">
+
+    <style>
+    	html, body{
+    		height: 100%;
+    		width: 100%;
+    	}
+    	#map-container{
+    		height:80vh;
+    		width: auto;
+    		overflow: hidden;
+    		
+    	}
+        #post-title{
+            text-align: center;
+        }
+        #post-para{
+            margin: 5vw;
+        }
+    	#map{
+    		position: relative;
+    		overflow: hidden;
+    		height: inherit;
+    		width: inherit;
+    		overflow: hidden;
+    		border: 10px solid;
+    	}
+        #slider-row{
+            height:13vh;
+            overflow-x:scroll;
+            overflow-y:hidden;
+            white-space:nowrap;
+            vertical-align: middle;
+        }
+    	#slider{
+    		
+            float: none;
+            display: inline-block;
+            white-space: normal;
+            vertical-align: middle;
+            width: inherit;
+
+    	}
+        
+    	.jumbotron {
+			background-image: url("http://b06.c9a.myftpupload.com/wp-content/uploads/2015/07/maryWilsonBall.png");
+			background-size: cover;
+        }    
+		.container-fluid{
+			overflow: hidden;
+		}
+		#map-img {
+    		/*position: relative;*/
+		}
+		#radio{
+			height: 7vh;
+		}
+        .carousel{
+            margin: 0 auto;
+        }
+        .carousel-inner > .item > img {
+            margin: 0 auto;
+        }
+        
+    </style>
+    <script>
+        
+        function loadXMLDoc(locale){
+            var xmlhttp;
+            var titleTxt,titlex,i,paraTxt,parax,imageTxt,imagex;
+            var query;
+            $('#sliderWidget').slider();
+            if (window.XMLHttpRequest)
+                {// code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp=new XMLHttpRequest();
+            }
+            else
+                {// code for IE6, IE5
+                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange=function(){
+                if (xmlhttp.readyState==4 && xmlhttp.status==200){
+                    xmlDoc=xmlhttp.responseXML;
+                    titleTxt="";
+                    paraTxt="";
+                    imageTxt="";
+                    titlex=xmlDoc.getElementsByTagName("name");  
+                    parax=xmlDoc.getElementsByTagName("desc");
+                    imagex=xmlDoc.getElementsByTagName("imgs");
+                    titleTxt= titlex[locale].firstChild.nodeValue;
+                    paraTxt= parax[locale].firstChild.nodeValue;
+                    imageTxt= imagex[locale].firstChild.nodeValue;
+                    document.getElementById("post-title").innerHTML=titleTxt;
+                    document.getElementById("post-para").innerHTML=paraTxt;
+                    
+                    loadImgs(imageTxt);
+                    
+                }
+            }
+            xmlhttp.open("GET","battleData.xml",true);
+            xmlhttp.send();
+            
+            
+
+        }
+        function loadImgs(images){
+            $('.carousel-indicators').empty();
+            $('.carousel-inner').empty();
+            images = images.split(";");
+            
+            
+            for(var i=0 ; i< images.length ; i++) {
+                
+                $('<div class="item"><img src="'+images[i]+'"></div>').appendTo('.carousel-inner');
+                $('<li data-target="#carousel-example-generic" data-slide-to="'+i+'"></li>').appendTo('.carousel-indicators');
+            }
+            $('.item').first().addClass('active');
+            $('.carousel-indicators > li').first().addClass('active');
+            $('#carousel-example-generic').carousel();
+            
+            
+        }
+        
+    </script>
+</head>
+<body>
+	
+  	<div class="jumbotron">
+    	<h1>Battles of the Revolutionary War</h1> 
+    	
+   </div>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-12 center-text" id="sliderWidget">
+                <div class="slider slider-horizontal"></div>
+				<div class="btn-group" id="radio">
+  					
+				</div>
+			</div>
+		</div>
+       
+
+		<div class="row">
+    		<div class="col-sm-12">
+      			<div id="map-container">
+      				<div id="map">
+        				<img id="map-img" src="images/map.jpg" width="2524" height="2118"/>
+        			</div>
+    			</div>
+    		</div>
+ 		 </div>
+ 		 <div class="row" id="slider-row">
+            <div id="slider" class="col-sm-1">
+                <button type="button" id="mepkin" class="tooltipper btn btn-primary btn-lg" onclick="loadXMLDoc(0)">Battle of Kettle Creek</button>
+            </div>  
+            <div id="slider" class="col-sm-1">
+                <button type="button" id="biggins" class="tooltipper btn btn-primary btn-lg" onclick="loadXMLDoc(1)">Battle of Brier Creek</button>
+            </div>
+            <div id="slider" class="col-sm-1">
+                <button type="button" id="charleston" class="tooltipper btn btn-primary btn-lg" onclick="loadXMLDoc(2)">Seige of Charleston</button>
+            </div>
+            <div id="slider" class="col-sm-1">
+                <button type="button" id="camden" class="tooltipper btn btn-primary btn-lg" onclick="loadXMLDoc(3)">Battle of Camden</button>
+            </div>
+            <div id="slider" class="col-sm-1">
+                <button type="button" id="plantation" class="tooltipper btn btn-primary btn-lg" onclick="loadXMLDoc(4)">Williamson's Plantation</button>
+            </div>
+       
+            
+            
+    		
+ 		 </div>
+	   <div class="row" id="info-box">
+            <div class="col-sm-12">
+                <h1 id="post-title"></h1>
+                <p id="post-para"></p>
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators"></ol>
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                        
+                    </div>
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
+                </div>
+                
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

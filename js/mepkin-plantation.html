@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="js/lightbox.min.js"></script>
+    <link href="css/lightbox.css" rel="stylesheet" />
+
+    <style type="text/css">
+
+#img-container{
+    width: 75%;
+    margin:0 auto;
+    display: table;
+
+
+}
+h1{
+    text-align: center;
+}
+.img-zoom{
+    float: left;
+    width: 20%;
+    height: 20%;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Mepkin Plantation</h1>
+    <div id="img-container">
+        <a href="images/mepkin/img1.png" data-lightbox="image-1" data-title="My caption"><img class="img-zoom" data-lightbox="mepkin" src="images/mepkin/img1.png" alt="Mepkin Plantation House"/></a>
+        <a href="images/mepkin/img2.png" data-lightbox="image-1" data-title="My caption"><img class="img-zoom" data-lightbox="mepkin" src="images/mepkin/img2.png" alt="Mepkin Plantation House"/></a>
+        <a href="images/mepkin/img3.png" data-lightbox="image-1" data-title="My caption"><img class="img-zoom" data-lightbox="mepkin" src="images/mepkin/img3.png" alt="Mepkin Plantation House"/></a>
+        <a href="images/mepkin/img4.png" data-lightbox="image-1" data-title="My caption"><img class="img-zoom" data-lightbox="mepkin" src="images/mepkin/img4.png" alt="Mepkin Plantation House"/></a>
+        <a href="images/mepkin/img5.png" data-lightbox="image-1" data-title="My caption"><img class="img-zoom" data-lightbox="mepkin" src="images/mepkin/img5.png" alt="Mepkin Plantation House"/></a>
+        
+        
+        
+    </div>
+<script>
+  $(document).ready(function(){
+    $('.img-zoom').hover(function() {
+        $(this).addClass('transition');
+ 
+    }, function() {
+        $(this).removeClass('transition');
+    });
+  });
+</script>
+</body>
+</html>
